@@ -36,3 +36,9 @@ Catálogos separados por disciplina/versão, RFAs sem pastas de códigos, cópia
 ## Dashboards complementares
 - `telemetria/`: instalações e versões, preservando a fonte anterior e sua atualização de cinco minutos.
 - `telemetria/uso/`: comandos, pessoas ativas, conteúdo e resultados; leitura pública sanitizada da planilha privada, consolidada a cada seis horas. Não inclui IP ou credenciais. Veja o README dessa pasta para contagem, limites e manutenção.
+
+## Operação corporativa — 1.0.47
+
+Guia: https://pavelar-bim.github.io/bimflow-acompanhamento/
+
+Código privado: Pavelar-BIM/BIMFlow. Acervo privado: Pavelar-BIM/bimflow-biblioteca. Uso consolidado na conta compatibilizacaobim5@pavelarengenharia.com.br a cada 15 minutos; o navegador consulta a cada minuto. Os 24 campos de uso são públicos por autorização, sem chaves nem credenciais. A planilha de origem permanece privada. Manter as versões e o roadmap em guia/dados.json. Alterações na branch main são publicadas pelo GitHub Pages.
