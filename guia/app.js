@@ -33,12 +33,10 @@ function show(rows,cfg,state,label){
  lista.replaceChildren(...(baixo.length?baixo.map(r=>{const li=node('li');const who=node('span');who.append(node('strong','',r.user),document.createTextNode(` · ${r.maq} · Revit ${r.rev}`));li.append(who,node('b','','v'+r.ver.replace(/\.0$/,'')));return li;}):[node('li','muted','Todas as instalações estão na versão de referência.')]));
  const st=id('inst-estado');st.className='live-state '+state;st.textContent=label;
 }
-function query(cfg){return new Promise((resolve,reject)=>{const cb='BIMFlowGuia_'+Date.now(),sc=document.createElement('script');const t=setTimeout(()=>done(new Error('timeout')),12000);function done(e,d){clearTimeout(t);sc.remove();delete window[cb];e?reject(e):resolve(d);}
- window[cb]=r=>{if(r.status!=='ok'||!r.table)return done(new Error('planilha'));done(null,r.table.rows.map(row=>[0,1,2,3,4].map(i=>{const c=row.c[i];return c?(i===0?(c.f||c.v):String(c.v??'')):'';})));};
- sc.onerror=()=>done(new Error('conexao'));const u=new URL(`https://docs.google.com/spreadsheets/d/${cfg.sheetId}/gviz/tq`);u.searchParams.set('sheet',cfg.sheetName);u.searchParams.set('headers','1');u.searchParams.set('tq','select A,B,C,D,E');u.searchParams.set('tqx','out:json;responseHandler:'+cb);sc.src=u.href;document.head.append(sc);});}
+function query(cfg){return CorporateInstallations.read(cfg);}
 fetch('telemetria/config.json',{cache:'no-store'}).then(r=>r.json()).then(cfg=>{
  show(cfg.rows||[],cfg,'cached','Cópia salva');
- query(cfg).then(rows=>show(rows,cfg,'ok','Ao vivo · planilha')).catch(()=>{});
+ query(cfg).then(rows=>show(rows,cfg,'ok','Receptor corporativo')).catch(()=>{});
 }).catch(()=>{id('inst-estado').textContent='Dados indisponíveis';});
 })();
 

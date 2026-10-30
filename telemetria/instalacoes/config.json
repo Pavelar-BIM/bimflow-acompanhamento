@@ -1,8 +1,6 @@
 {
-  "sheetId": "1gb3Jl9uYyyDxPHdMH2RKNmeEfmVFnX8IaP1Tsej-i8I",
-  "sheetName": "Página1",
-  "referenceVersion": "1.0.51",
-  "referenceRelease": "https://github.com/Pavelar-BIM/BIMFlow/releases/tag/v1.0.51",
+  "referenceVersion": "1.0.52",
+  "referenceRelease": "https://github.com/Pavelar-BIM/BIMFlow/releases/tag/v1.0.52",
   "snapshotAt": "2026-10-27T10:01:15-03:00",
   "rows": [
     [
@@ -40,5 +38,6 @@
       "2024",
       "1.0.18.0"
     ]
-  ]
+  ],
+  "endpoint": "https://script.google.com/macros/s/AKfycby26SCDM5ABLS9Y8gP_CAqhgIj-R08qiRAHYRYboSpiFFpnw2ykideBV4DAzqHKcM8j/exec"
 }
